@@ -2,13 +2,13 @@ const app = new Vue({
 
     el: '#app',
     data: {
-        title: "GYM with Vue",
+        title: "To Do with Vue",
         tasks: [],
         newTask: ''
     },
     methods: {
         updateLS(){
-            localStorage.setItem('gym-local', JSON.stringify(this.tasks));
+            localStorage.setItem('todo-local', JSON.stringify(this.tasks));
         },
 
         addTask(){
@@ -32,7 +32,7 @@ const app = new Vue({
     },
 
     created(){
-        let dataDB = JSON.parse(localStorage.getItem('gym-local'));
+        let dataDB = JSON.parse(localStorage.getItem('todo-local'));
 
         if (dataDB === null){
             this.tasks = [];
